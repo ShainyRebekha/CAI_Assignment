@@ -20,7 +20,7 @@ PROCESSED_DATA_FILE = "financial_data_with_embeddings.csv"
 MEMORY_FILE = "chat_memory.json"
 
 GDRIVE_FILE_ID = "1rvFh5LzvIVx-MBPvey6Vf47fVljeKSW6"
-GDRIVE_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}&export=download"
+GDRIVE_URL = "https://drive.google.com/file/d/1rvFh5LzvIVx-MBPvey6Vf47fVljeKSW6/view?usp=drive_link"
 
 # Ensure Consistent Model for Embeddings
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
