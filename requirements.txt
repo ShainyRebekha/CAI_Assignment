@@ -1,6 +1,6 @@
 streamlit
 torch
-faiss-cpu
+faiss-cpu==1.7.4
 sentence-transformers
 rank-bm25
 numpy
@@ -8,3 +8,4 @@ jsonpickle  # (optional, helps with JSON serialization)
 gdown
 torch
 numpy
+pandas
