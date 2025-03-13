@@ -7,6 +7,9 @@ import torch
 from sentence_transformers import SentenceTransformer
 from rank_bm25 import BM25Okapi
 import numpy as np
+import gdown
+import faiss
+import os
 
 # File Paths
 DATA_FILE = "financial_data.csv"
@@ -16,15 +19,27 @@ METADATA_FILE = "metadata.json"
 PROCESSED_DATA_FILE = "financial_data_with_embeddings.csv"
 MEMORY_FILE = "chat_memory.json"
 
-# Load FAISS Index
+
+FAISS_INDEX_FILE = "index.faiss"
+GDRIVE_URL = "https://drive.google.com/file/d/1rvFh5LzvIVx-MBPvey6Vf47fVljeKSW6/view?usp=drive_link"  # Replace with your file ID
+
+def download_faiss_from_drive():
+    if not os.path.exists(FAISS_INDEX_FILE):  # Download only if not available
+        gdown.download(GDRIVE_URL, FAISS_INDEX_FILE, quiet=False)
+        print("✅ FAISS Index downloaded successfully!")
+
 def load_faiss_index():
     try:
+        download_faiss_from_drive()
         index = faiss.read_index(FAISS_INDEX_FILE)
-        #st.success(f"✅ FAISS Index Loaded (Embedding Dim: {index.d}, Entries: {index.ntotal})")
+        print(f"✅ FAISS Index Loaded (Entries: {index.ntotal})")
         return index
     except Exception as e:
-        st.error(f"❌ Error loading FAISS Index: {e}")
+        print(f"❌ Error loading FAISS Index: {e}")
         return None
+
+# Usage
+index = load_faiss_index()
 
 # Load BM25 Corpus
 def load_bm25():
