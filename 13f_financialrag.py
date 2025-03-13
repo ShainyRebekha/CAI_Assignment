@@ -20,7 +20,6 @@ PROCESSED_DATA_FILE = "financial_data_with_embeddings.csv"
 MEMORY_FILE = "chat_memory.json"
 
 
-FAISS_INDEX_FILE = "index.faiss"
 GDRIVE_URL = "https://drive.google.com/file/d/1rvFh5LzvIVx-MBPvey6Vf47fVljeKSW6/view?usp=drive_link"  # Replace with your file ID
 
 def download_faiss_from_drive():
