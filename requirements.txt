@@ -5,3 +5,6 @@ sentence-transformers
 rank-bm25
 numpy
 jsonpickle  # (optional, helps with JSON serialization)
+gdown
+torch
+numpy
