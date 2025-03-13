@@ -1,6 +1,7 @@
+streamlit
 torch
 faiss-cpu
 sentence-transformers
 rank-bm25
 numpy
-pickle5  # (optional, if using an older Python version)
+jsonpickle  # (optional, helps with JSON serialization)
